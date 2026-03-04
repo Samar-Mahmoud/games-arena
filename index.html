@@ -1,0 +1,2445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Days+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Title -->
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <title>Games website</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header" class="position-fixed bg-main-dark top-0 w-100 z-3">
+      <div class="container-fluid" style="--bs-gutter-x: 0">
+        <nav
+          id="nav-links"
+          class="navbar navbar-expand-xl border-bottom border-1 font-chakra"
+          style="
+            --bs-navbar-nav-link-padding-x: 0;
+            --bs-navbar-padding-x: 1.5rem;
+            --bs-navbar-padding-y: 1rem;
+            --bs-navbar-toggler-border-color: transparent;
+            --bs-navbar-toggler-border-radius: 0;
+            --bs-navbar-toggler-focus-width: 0;
+            --bs-border-color: var(--primary-light-color);
+          "
+        >
+          <div
+            class="logo d-flex align-items-center"
+            style="margin-inline-end: 2rem"
+          >
+            <div class="box flex-shrink-0 text-main d-flex me-2">
+              <svg
+                width="1.5rem"
+                height="1.75rem"
+                data-prefix="fas"
+                data-icon="gamepad"
+                role="img"
+                viewBox="0 0 640 512"
+                aria-hidden="true"
+                data-fa-i2svg=""
+              >
+                <path
+                  fill="currentColor"
+                  d="M448 64c106 0 192 86 192 192S554 448 448 448l-256 0C86 448 0 362 0 256S86 64 192 64l256 0zM192 176c-13.3 0-24 10.7-24 24l0 32-32 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l32 0 0 32c0 13.3 10.7 24 24 24s24-10.7 24-24l0-32 32 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-32 0 0-32c0-13.3-10.7-24-24-24zm240 96a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm64-96a32 32 0 1 0 0 64 32 32 0 1 0 0-64z"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="fw-bold text-main text-xl mb-0 ms-1 font-chakra">
+              GameArena
+            </h2>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-actions"
+            aria-controls="navbar-actions"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            style="
+              --bs-navbar-toggler-padding-y: 0;
+              --bs-navbar-toggler-padding-x: 0;
+              --bs-border-width: 0;
+              --bs-navbar-color: var(--light-gray);
+            "
+          >
+            <span
+              class="navbar-toggler-icon d-flex"
+              style="background-image: none"
+            >
+              <svg
+                class="m-auto"
+                width="1.5rem"
+                height="1.5rem"
+                data-prefix="fas"
+                data-icon="bars"
+                role="img"
+                viewBox="0 0 448 512"
+                aria-hidden="true"
+                data-fa-i2svg=""
+              >
+                <path
+                  fill="currentColor"
+                  d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+                ></path>
+              </svg>
+            </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbar-actions">
+            <ul
+              class="navbar-nav me-auto"
+              style="
+                --bs-nav-link-padding-x: 0;
+                --bs-nav-link-padding-y: 0;
+                --bs-nav-link-font-size: 1rem;
+                --bs-nav-link-color: var(--light-gray);
+                --bs-navbar-active-color: var(--primary-color);
+                --bs-nav-link-hover-color: var(--primary-color);
+              "
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link py-2 py-xl-0 mb-3 mb-xl-0 me-xl-4"
+                  aria-current="page"
+                  href="#hero"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link py-2 py-xl-0 mb-3 mb-xl-0 me-xl-4 text-uppercase"
+                  href="#games"
+                  >Our Games</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link py-2 py-xl-0 mb-3 mb-xl-0 me-xl-4"
+                  href="#what-we-do"
+                  >What We Do</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link py-2 py-xl-0 mb-3 mb-xl-0 me-xl-4"
+                  href="#team"
+                  >Our Team</a
+                >
+              </li>
+              <li class="nav-item d-xl-none">
+                <a
+                  class="nav-link py-2 py-xl-0 mb-3 mb-xl-0 me-xl-4"
+                  href="#tournaments"
+                  >Tournaments</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link py-2 py-xl-0 mb-3 mb-xl-0 me-xl-4"
+                  href="#contact"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+
+            <div
+              class="nav-btns d-flex flex-column align-items-start align-items-xl-center flex-xl-row gap-3 pt-4 pt-xl-0"
+            >
+              <div class="d-flex align-items-center text-gray gap-2 mb-3 mb-xl-0">
+                <svg
+                  class="me-1"
+                  width="1.15rem"
+                  height="1.15rem"
+                  data-prefix="far"
+                  data-icon="bell"
+                  role="img"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true"
+                  data-fa-i2svg=""
+                >
+                  <path
+                    fill="currentColor"
+                    d="M224 0c-13.3 0-24 10.7-24 24l0 9.7C118.6 45.3 56 115.4 56 200l0 14.5c0 37.7-10 74.7-29 107.3L5.1 359.2C1.8 365 0 371.5 0 378.2 0 399.1 16.9 416 37.8 416l372.4 0c20.9 0 37.8-16.9 37.8-37.8 0-6.7-1.8-13.3-5.1-19L421 321.7c-19-32.6-29-69.6-29-107.3l0-14.5c0-84.6-62.6-154.7-144-166.3l0-9.7c0-13.3-10.7-24-24-24zM392.4 368l-336.9 0 12.9-22.1C91.7 306 104 260.6 104 214.5l0-14.5c0-66.3 53.7-120 120-120s120 53.7 120 120l0 14.5c0 46.2 12.3 91.5 35.5 131.4L392.4 368zM156.1 464c9.9 28 36.6 48 67.9 48s58-20 67.9-48l-135.8 0z"
+                  ></path>
+                </svg>
+                <span class="d-xl-none fs-6">Notifications</span>
+              </div>
+              <div class="d-flex align-items-center text-gray gap-2 mb-3 mb-xl-0">
+                <svg
+                  class="me-1"
+                  width="1.15rem"
+                  height="1.15rem"
+                  data-prefix="far"
+                  data-icon="message"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true"
+                  data-fa-i2svg=""
+                >
+                  <path
+                    fill="currentColor"
+                    d="M203.7 512.9s0 0 0 0l-37.8 26.7c-7.3 5.2-16.9 5.8-24.9 1.7S128 529 128 520l0-72-32 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l320 0c53 0 96 43 96 96l0 224c0 53-43 96-96 96l-120.4 0-91.9 64.9zm64.3-104.1c8.1-5.7 17.8-8.8 27.7-8.8L416 400c26.5 0 48-21.5 48-48l0-224c0-26.5-21.5-48-48-48L96 80c-26.5 0-48 21.5-48 48l0 224c0 26.5 21.5 48 48 48l56 0c10.4 0 19.3 6.6 22.6 15.9 .9 2.5 1.4 5.2 1.4 8.1l0 49.7c32.7-23.1 63.3-44.7 91.9-64.9z"
+                  ></path>
+                </svg>
+                <span class="d-xl-none fs-6">Messages</span>
+              </div>
+              <button class="shine-btn filled btn border-0 me-0 me-xl-3 w-100">
+                Sign In
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main data-bs-spy="scroll" data-bs-target="#nav-links">
+      <!-- Hero Section -->
+      <section
+        id="hero"
+        class="min-vh-100 d-flex align-items-center overflow-hidden"
+      >
+        <div class="container-fluid px-3 px-sm-4 py-5 py-md-0">
+          <div
+            class="row font-chakra"
+            style="--bs-gutter-y: 4rem; --bs-gutter-x: 3rem"
+          >
+            <!-- Text Content -->
+            <div class="col-12 col-sm-11 col-lg-6 mx-auto">
+              <div class="text-content text-center text-lg-start">
+                <h1 class="fw-bold mb-3 mb-md-4 text-gray">
+                  THE ULTIMATE
+                  <span class="text-main d-block">GAMING</span>
+                  EXPERIENCE
+                </h1>
+                <p class="text-sm mb-4 mx-auto mx-lg-0">
+                  Join millions of gamers worldwide in the most competitive
+                  eSports tournaments. Experience next-level gaming with
+                  cutting-edge technology and endless possibilities.
+                </p>
+              </div>
+              <div
+                class="btns d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-2"
+              >
+                <button
+                  class="shine-btn filled btn border-0 mb-1 mb-sm-0 me-sm-1"
+                >
+                  Start Gaming Now
+                </button>
+                <button class="shine-btn outlined btn">
+                  Watch Tournaments
+                </button>
+              </div>
+            </div>
+            <!-- Hero Image -->
+            <div
+              class="col-12 col-sm-10 col-lg-6 mx-auto d-flex align-items-center justify-content-center"
+            >
+              <div
+                class="hero-img w-100 rounded position-relative z-0"
+                style="--bs-border-radius: 1.5rem"
+              >
+                <div class="img-box rounded-4 p-1">
+                  <img
+                    src="./images/hero-img.png"
+                    alt="professional esports player gaming setup with RGB keyboard, gaming chair, multiple monitors"
+                  />
+                </div>
+                <div
+                  class="box bg-main-dark border border-1 rounded-3 position-absolute p-3 p-sm-4"
+                  style="--bs-border-color: #364153"
+                >
+                  <div class="d-flex align-items-center gap-2">
+                    <svg
+                      class="me-1 text-main"
+                      width="1.25rem"
+                      height="1.25rem"
+                      data-prefix="fas"
+                      data-icon="trophy"
+                      role="img"
+                      viewBox="0 0 512 512"
+                      aria-hidden="true"
+                      data-fa-i2svg=""
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M144.3 0l224 0c26.5 0 48.1 21.8 47.1 48.2-.2 5.3-.4 10.6-.7 15.8l49.6 0c26.1 0 49.1 21.6 47.1 49.8-7.5 103.7-60.5 160.7-118 190.5-15.8 8.2-31.9 14.3-47.2 18.8-20.2 28.6-41.2 43.7-57.9 51.8l0 73.1 64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-192 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0 0-73.1c-16-7.7-35.9-22-55.3-48.3-18.4-4.8-38.4-12.1-57.9-23.1-54.1-30.3-102.9-87.4-109.9-189.9-1.9-28.1 21-49.7 47.1-49.7l49.6 0c-.3-5.2-.5-10.4-.7-15.8-1-26.5 20.6-48.2 47.1-48.2zM101.5 112l-52.4 0c6.2 84.7 45.1 127.1 85.2 149.6-14.4-37.3-26.3-86-32.8-149.6zM380 256.8c40.5-23.8 77.1-66.1 83.3-144.8L411 112c-6.2 60.9-17.4 108.2-31 144.8z"
+                      ></path>
+                    </svg>
+                    <div>
+                      <span class="d-block text-xs text-gray-dark"
+                        >Active Players</span
+                      >
+                      <span class="d-block text-gray fw-bold">2.5M+</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Latest Games Section -->
+      <section id="games">
+        <div class="container-fluid">
+          <!-- Section Header -->
+          <header
+            class="section-header mb-5 d-flex flex-column align-items-center"
+          >
+            <span
+              class="text-sm d-block mb-3 fw-bold text-uppercase text-main font-chakra"
+              >Our Games</span
+            >
+            <h2 class="text-gray md fw-bold">Our Latest Games</h2>
+          </header>
+
+          <!-- Carousel -->
+          <div id="carousel" class="carousel">
+            <div class="carousel-inner font-chakra">
+              <!-- Slide 1 (Cards 1-3) -->
+              <div class="carousel-item active">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-0">
+                  <!-- Card 1 -->
+                  <div class="col p-0 px-md-3">
+                    <div
+                      class="card overflow-hidden rounded-4 position-relative"
+                    >
+                      <div
+                        class="badges position-absolute d-flex align-items-center gap-2"
+                      >
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="gamepad"
+                            role="img"
+                            viewBox="0 0 640 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M448 64c106 0 192 86 192 192S554 448 448 448l-256 0C86 448 0 362 0 256S86 64 192 64l256 0zM192 176c-13.3 0-24 10.7-24 24l0 32-32 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l32 0 0 32c0 13.3 10.7 24 24 24s24-10.7 24-24l0-32 32 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-32 0 0-32c0-13.3-10.7-24-24-24zm240 96a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm64-96a32 32 0 1 0 0 64 32 32 0 1 0 0-64z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">ADVENTURE</span>
+                        </span>
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="users"
+                            role="img"
+                            viewBox="0 0 640 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M320 16a104 104 0 1 1 0 208 104 104 0 1 1 0-208zM96 88a72 72 0 1 1 0 144 72 72 0 1 1 0-144zM0 416c0-70.7 57.3-128 128-128 12.8 0 25.2 1.9 36.9 5.4-32.9 36.8-52.9 85.4-52.9 138.6l0 16c0 11.4 2.4 22.2 6.7 32L32 480c-17.7 0-32-14.3-32-32l0-32zm521.3 64c4.3-9.8 6.7-20.6 6.7-32l0-16c0-53.2-20-101.8-52.9-138.6 11.7-3.5 24.1-5.4 36.9-5.4 70.7 0 128 57.3 128 128l0 32c0 17.7-14.3 32-32 32l-86.7 0zM472 160a72 72 0 1 1 144 0 72 72 0 1 1 -144 0zM160 432c0-88.4 71.6-160 160-160s160 71.6 160 160l0 16c0 17.7-14.3 32-32 32l-256 0c-17.7 0-32-14.3-32-32l0-16z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">MULTIPLAYER</span>
+                        </span>
+                      </div>
+                      <div class="ratio ratio-4x3">
+                        <img
+                          class="h-100 object-fit-cover"
+                          src="./images/latest-games-1.png"
+                          alt="two cute green alien creatures standing on a desolate planet with a green nebula in the background, 3D render, vibrant, detailed"
+                        />
+                      </div>
+                      <h3
+                        class="position-absolute bottom-0 start-0 end-0 p-4 mb-0 fw-bold text-main-dark text-lg"
+                      >
+                        Alien Companions
+                      </h3>
+                    </div>
+                  </div>
+                  <!-- Card 2 -->
+                  <div class="col d-none d-md-block px-md-3">
+                    <div
+                      class="card overflow-hidden rounded-4 position-relative"
+                    >
+                      <div
+                        class="badges position-absolute d-flex align-items-center gap-2"
+                      >
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="flag-checkered"
+                            role="img"
+                            viewBox="0 0 448 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M32 0C49.7 0 64 14.3 64 32l0 16 69-17.2c38.1-9.5 78.3-5.1 113.5 12.5 46.3 23.2 100.8 23.2 147.1 0l9.6-4.8C423.8 28.1 448 43.1 448 66.1l0 279.7c0 13.3-8.3 25.3-20.8 30l-34.7 13c-46.2 17.3-97.6 14.6-141.7-7.4-37.9-19-81.4-23.7-122.5-13.4L64 384 64 480c0 17.7-14.3 32-32 32S0 497.7 0 480L0 32C0 14.3 14.3 0 32 0zM64 187.1l64-13.9 0 65.5-64 13.9 0 65.5 48.8-12.2c5.1-1.3 10.1-2.4 15.2-3.3l0-63.9 38.9-8.4c8.3-1.8 16.7-2.5 25.1-2.1l0-64c13.6 .4 27.2 2.6 40.4 6.4l23.6 6.9 0 66.7-41.7-12.3c-7.3-2.1-14.8-3.4-22.3-3.8l0 71.4c21.8 1.9 43.3 6.7 64 14.4l0-69.8 22.7 6.7c13.5 4 27.3 6.4 41.3 7.4l0-64.2c-7.8-.8-15.6-2.3-23.2-4.5l-40.8-12 0-62c-13-3.8-25.8-8.8-38.2-15-8.2-4.1-16.9-7-25.8-8.8l0 72.4c-13-.4-26 .8-38.7 3.6l-25.3 5.5 0-75.2-64 16 0 73.1zM320 335.7c16.8 1.5 33.9-.7 50-6.8l14-5.2 0-71.7-7.9 1.8c-18.4 4.3-37.3 5.7-56.1 4.5l0 77.4zm64-149.4l0-70.8c-20.9 6.1-42.4 9.1-64 9.1l0 69.4c13.9 1.4 28 .5 41.7-2.6l22.3-5.2z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">RACING</span>
+                        </span>
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="bolt"
+                            role="img"
+                            viewBox="0 0 448 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M338.8-9.9c11.9 8.6 16.3 24.2 10.9 37.8L271.3 224 416 224c13.5 0 25.5 8.4 30.1 21.1s.7 26.9-9.6 35.5l-288 240c-11.3 9.4-27.4 9.9-39.3 1.3s-16.3-24.2-10.9-37.8L176.7 288 32 288c-13.5 0-25.5-8.4-30.1-21.1s-.7-26.9 9.6-35.5l288-240c11.3-9.4 27.4-9.9 39.3-1.3z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">SCI-FI</span>
+                        </span>
+                      </div>
+                      <div class="ratio ratio-4x3">
+                        <img
+                          class="h-100 object-fit-cover"
+                          src="./images/latest-games-2.png"
+                          alt="futuristic red hover car racing through a glowing green data tunnel, motion blur, cyberpunk style, cinematic lighting"
+                        />
+                      </div>
+                      <h3
+                        class="position-absolute bottom-0 start-0 end-0 p-4 mb-0 fw-bold text-main-dark text-lg"
+                      >
+                        Cyber Run 2099
+                      </h3>
+                    </div>
+                  </div>
+                  <!-- Card 3 -->
+                  <div class="col d-none d-lg-block px-md-3">
+                    <div
+                      class="card overflow-hidden rounded-4 position-relative"
+                    >
+                      <div
+                        class="badges position-absolute d-flex align-items-center gap-2"
+                      >
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fab"
+                            data-icon="discord"
+                            role="img"
+                            viewBox="0 0 576 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1 .1s-.6 .4-.8 .8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2c-41.3 7.1-81.6 19.6-119.7 37.1-.3 .1-.6 .4-.8 .7-76.2 113.8-97.1 224.9-86.9 334.5 0 .3 .1 .5 .2 .8s.3 .4 .5 .6c44.4 32.9 94 58 146.8 74.2 .4 .1 .8 .1 1.1 0s.7-.4 .9-.7c11.3-15.4 21.4-31.8 30-48.8 .1-.2 .2-.5 .2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6 .2-.9 .3-.5 .6-.7c3.1-2.3 6.2-4.7 9.1-7.1 .3-.2 .6-.4 .9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1 .7-.2 1-.2s.7 .2 .9 .4c2.9 2.4 6 4.9 9.1 7.2 .2 .2 .4 .4 .6 .7s.2 .6 .2 .9-.1 .6-.3 .9-.4 .5-.6 .6c-14.7 8.6-30 15.9-45.9 21.8-.2 .1-.5 .2-.7 .4s-.3 .4-.4 .7-.1 .5-.1 .8 .1 .5 .2 .8c8.8 17 18.8 33.3 30 48.8 .2 .3 .6 .6 .9 .7s.8 .1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2 .2-.2 .4-.4 .5-.6s.2-.5 .2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2zm195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">ACTION</span>
+                        </span>
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="microchip"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M176 24c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40c-35.3 0-64 28.7-64 64l-40 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l40 0 0 56-40 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l40 0 0 56-40 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l40 0c0 35.3 28.7 64 64 64l0 40c0 13.3 10.7 24 24 24s24-10.7 24-24l0-40 56 0 0 40c0 13.3 10.7 24 24 24s24-10.7 24-24l0-40 56 0 0 40c0 13.3 10.7 24 24 24s24-10.7 24-24l0-40c35.3 0 64-28.7 64-64l40 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-40 0 0-56 40 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-40 0 0-56 40 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-40 0c0-35.3-28.7-64-64-64l0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40-56 0 0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40-56 0 0-40zM160 128l192 0c17.7 0 32 14.3 32 32l0 192c0 17.7-14.3 32-32 32l-192 0c-17.7 0-32-14.3-32-32l0-192c0-17.7 14.3-32 32-32zm16 48l0 160 160 0 0-160-160 0z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">GEFORCE</span>
+                        </span>
+                      </div>
+                      <div class="ratio ratio-4x3">
+                        <img
+                          class="h-100 object-fit-cover"
+                          src="./images/latest-games-3.png"
+                          alt="massive alien mothership hovering over a lush green planet with smaller ships flying around it, space opera, epic scale, digital painting"
+                        />
+                      </div>
+                      <h3
+                        class="position-absolute bottom-0 start-0 end-0 p-4 mb-0 fw-bold text-main-dark text-lg"
+                      >
+                        The Legend of Zelda: Tears of the Kingdom
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Slide 2 (Cards 4-6) -->
+              <div class="carousel-item">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-0">
+                  <!-- Card 4 -->
+                  <div class="col px-0 px-md-3">
+                    <div
+                      class="card overflow-hidden rounded-4 position-relative"
+                    >
+                      <div
+                        class="badges position-absolute d-flex align-items-center gap-2"
+                      >
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="shield-halved"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M256 0c4.6 0 9.2 1 13.4 2.9L457.8 82.8c22 9.3 38.4 31 38.3 57.2-.5 99.2-41.3 280.7-213.6 363.2-16.7 8-36.1 8-52.8 0-172.4-82.5-213.1-264-213.6-363.2-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.9 1 251.4 0 256 0zm0 66.8l0 378.1c138-66.8 175.1-214.8 176-303.4l-176-74.6 0 0z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">RPG</span>
+                        </span>
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="wand-magic-sparkles"
+                            role="img"
+                            viewBox="0 0 576 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M263.4-27L278.2 9.8 315 24.6c3 1.2 5 4.2 5 7.4s-2 6.2-5 7.4L278.2 54.2 263.4 91c-1.2 3-4.2 5-7.4 5s-6.2-2-7.4-5L233.8 54.2 197 39.4c-3-1.2-5-4.2-5-7.4s2-6.2 5-7.4L233.8 9.8 248.6-27c1.2-3 4.2-5 7.4-5s6.2 2 7.4 5zM110.7 41.7l21.5 50.1 50.1 21.5c5.9 2.5 9.7 8.3 9.7 14.7s-3.8 12.2-9.7 14.7l-50.1 21.5-21.5 50.1c-2.5 5.9-8.3 9.7-14.7 9.7s-12.2-3.8-14.7-9.7L59.8 164.2 9.7 142.7C3.8 140.2 0 134.4 0 128s3.8-12.2 9.7-14.7L59.8 91.8 81.3 41.7C83.8 35.8 89.6 32 96 32s12.2 3.8 14.7 9.7zM464 304c6.4 0 12.2 3.8 14.7 9.7l21.5 50.1 50.1 21.5c5.9 2.5 9.7 8.3 9.7 14.7s-3.8 12.2-9.7 14.7l-50.1 21.5-21.5 50.1c-2.5 5.9-8.3 9.7-14.7 9.7s-12.2-3.8-14.7-9.7l-21.5-50.1-50.1-21.5c-5.9-2.5-9.7-8.3-9.7-14.7s3.8-12.2 9.7-14.7l50.1-21.5 21.5-50.1c2.5-5.9 8.3-9.7 14.7-9.7zM460 0c11 0 21.6 4.4 29.5 12.2l42.3 42.3C539.6 62.4 544 73 544 84s-4.4 21.6-12.2 29.5l-88.2 88.2-101.3-101.3 88.2-88.2C438.4 4.4 449 0 460 0zM44.2 398.5L308.4 134.3 409.7 235.6 145.5 499.8C137.6 507.6 127 512 116 512s-21.6-4.4-29.5-12.2L44.2 457.5C36.4 449.6 32 439 32 428s4.4-21.6 12.2-29.5z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">FANTASY</span>
+                        </span>
+                      </div>
+                      <div class="ratio ratio-4x3">
+                        <img
+                          class="h-100 object-fit-cover"
+                          src="./images/latest-games-4.png"
+                          alt="a knight in glowing futuristic armor standing on a cliff overlooking a fantasy landscape with floating islands, high fantasy meets sci-fi"
+                        />
+                      </div>
+                      <h3
+                        class="position-absolute bottom-0 start-0 end-0 p-4 mb-0 fw-bold text-main-dark text-lg"
+                      >
+                        Aetheria Chronicles
+                      </h3>
+                    </div>
+                  </div>
+                  <!-- Card 5 -->
+                  <div class="col d-none d-md-block px-md-3">
+                    <div
+                      class="card overflow-hidden rounded-4 position-relative"
+                    >
+                      <div
+                        class="badges position-absolute d-flex align-items-center gap-2"
+                      >
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="crosshairs"
+                            role="img"
+                            viewBox="0 0 576 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M288-16c17.7 0 32 14.3 32 32l0 18.3c98.1 14 175.7 91.6 189.7 189.7l18.3 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-18.3 0c-14 98.1-91.6 175.7-189.7 189.7l0 18.3c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-18.3C157.9 463.7 80.3 386.1 66.3 288L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l18.3 0C80.3 125.9 157.9 48.3 256 34.3L256 16c0-17.7 14.3-32 32-32zM131.2 288c12.7 62.7 62.1 112.1 124.8 124.8l0-12.8c0-17.7 14.3-32 32-32s32 14.3 32 32l0 12.8c62.7-12.7 112.1-62.1 124.8-124.8L432 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l12.8 0C432.1 161.3 382.7 111.9 320 99.2l0 12.8c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-12.8C193.3 111.9 143.9 161.3 131.2 224l12.8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-12.8 0zM288 208a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">SHOOTER</span>
+                        </span>
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="user-group"
+                            role="img"
+                            viewBox="0 0 576 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M64 128a112 112 0 1 1 224 0 112 112 0 1 1 -224 0zM0 464c0-97.2 78.8-176 176-176s176 78.8 176 176l0 6c0 23.2-18.8 42-42 42L42 512c-23.2 0-42-18.8-42-42l0-6zM432 64a96 96 0 1 1 0 192 96 96 0 1 1 0-192zm0 240c79.5 0 144 64.5 144 144l0 22.4c0 23-18.6 41.6-41.6 41.6l-144.8 0c6.6-12.5 10.4-26.8 10.4-42l0-6c0-51.5-17.4-98.9-46.5-136.7 22.6-14.7 49.6-23.3 78.5-23.3z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">CO-OP</span>
+                        </span>
+                      </div>
+                      <div class="ratio ratio-4x3">
+                        <img
+                          class="h-100 object-fit-cover"
+                          src="./images/latest-games-5.png"
+                          alt="a team of soldiers in tactical gear in a war-torn futuristic city, intense firefight, cinematic, gritty realism"
+                        />
+                      </div>
+                      <h3
+                        class="position-absolute bottom-0 start-0 end-0 p-4 mb-0 fw-bold text-main-dark text-lg"
+                      >
+                        Warfront Protocol
+                      </h3>
+                    </div>
+                  </div>
+                  <!-- Card 6 -->
+                  <div class="col d-none d-lg-block px-md-3">
+                    <div
+                      class="card overflow-hidden rounded-4 position-relative"
+                    >
+                      <div
+                        class="badges position-absolute d-flex align-items-center gap-2"
+                      >
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="dragon"
+                            role="img"
+                            viewBox="0 0 640 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M352 124.5l-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.3-32.5c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0L464 0c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48l-21.5 0c-17 0-33.3-6.7-45.3-18.7l-13.3-13.3-32 0 0 21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.8-109.8 109.8L32.3 512c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.4-18.6-1.3-3.3-2.2-6.9-2.3-10.7-.2-3.7 .3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1l0-102.5zM512 72.3c0-.1 0-.2 0-.3s0-.2 0-.3l0 .6zm-1.3 7.4L464.3 68.1c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zM130.9 116.5c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87 0 27.5c0 32.8 8.4 64.8 24 93l-232 0c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7L171 232.3 18.4 255.8c-7 1.1-13.9-2.6-16.9-9S.1 232.8 5.4 228L130.9 116.5z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">FOOTBALL</span>
+                        </span>
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="star"
+                            role="img"
+                            viewBox="0 0 576 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">FANTASY</span>
+                        </span>
+                      </div>
+                      <div class="ratio ratio-4x3">
+                        <img
+                          class="h-100 object-fit-cover"
+                          src="./images/latest-games-6.png"
+                          alt="football player in mid-air kicking a glowing ball of energy, dynamic action shot, dramatic lighting, high contrast"
+                        />
+                      </div>
+                      <h3
+                        class="position-absolute bottom-0 start-0 end-0 p-4 mb-0 fw-bold text-main-dark text-lg"
+                      >
+                        Shot Striker
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Slide 3 (Cards 7-9) -->
+              <div class="carousel-item">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-0">
+                  <!-- Card 7 -->
+                  <div class="col p-0 px-md-3">
+                    <div
+                      class="card overflow-hidden rounded-4 position-relative"
+                    >
+                      <div
+                        class="badges position-absolute d-flex align-items-center gap-2"
+                      >
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="trophy"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M144.3 0l224 0c26.5 0 48.1 21.8 47.1 48.2-.2 5.3-.4 10.6-.7 15.8l49.6 0c26.1 0 49.1 21.6 47.1 49.8-7.5 103.7-60.5 160.7-118 190.5-15.8 8.2-31.9 14.3-47.2 18.8-20.2 28.6-41.2 43.7-57.9 51.8l0 73.1 64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-192 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0 0-73.1c-16-7.7-35.9-22-55.3-48.3-18.4-4.8-38.4-12.1-57.9-23.1-54.1-30.3-102.9-87.4-109.9-189.9-1.9-28.1 21-49.7 47.1-49.7l49.6 0c-.3-5.2-.5-10.4-.7-15.8-1-26.5 20.6-48.2 47.1-48.2zM101.5 112l-52.4 0c6.2 84.7 45.1 127.1 85.2 149.6-14.4-37.3-26.3-86-32.8-149.6zM380 256.8c40.5-23.8 77.1-66.1 83.3-144.8L411 112c-6.2 60.9-17.4 108.2-31 144.8z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">SPORTS</span>
+                        </span>
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="fire"
+                            role="img"
+                            viewBox="0 0 448 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M160.5-26.4c9.3-7.8 23-7.5 31.9 .9 12.3 11.6 23.3 24.4 33.9 37.4 13.5 16.5 29.7 38.3 45.3 64.2 5.2-6.8 10-12.8 14.2-17.9 1.1-1.3 2.2-2.7 3.3-4.1 7.9-9.8 17.7-22.1 30.8-22.1 13.4 0 22.8 11.9 30.8 22.1 1.3 1.7 2.6 3.3 3.9 4.8 10.3 12.4 24 30.3 37.7 52.4 27.2 43.9 55.6 106.4 55.6 176.6 0 123.7-100.3 224-224 224S0 411.7 0 288c0-91.1 41.1-170 80.5-225 19.9-27.7 39.7-49.9 54.6-65.1 8.2-8.4 16.5-16.7 25.5-24.2zM225.7 416c25.3 0 47.7-7 68.8-21 42.1-29.4 53.4-88.2 28.1-134.4-4.5-9-16-9.6-22.5-2l-25.2 29.3c-6.6 7.6-18.5 7.4-24.7-.5-17.3-22.1-49.1-62.4-65.3-83-5.4-6.9-15.2-8-21.5-1.9-18.3 17.8-51.5 56.8-51.5 104.3 0 68.6 50.6 109.2 113.7 109.2z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">LEAGUE</span>
+                        </span>
+                      </div>
+                      <div class="ratio ratio-4x3">
+                        <img
+                          class="h-100 object-fit-cover"
+                          src="./images/latest-games-7.png"
+                          alt="Epic Gaming League"
+                        />
+                      </div>
+                      <h3
+                        class="position-absolute bottom-0 start-0 end-0 p-4 mb-0 fw-bold text-main-dark text-lg"
+                      >
+                        Epic Gaming League
+                      </h3>
+                    </div>
+                  </div>
+                  <!-- Card 8 -->
+                  <div class="col d-none d-md-block px-md-3">
+                    <div
+                      class="card overflow-hidden rounded-4 position-relative"
+                    >
+                      <div
+                        class="badges position-absolute d-flex align-items-center gap-2"
+                      >
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="rocket"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M128 320L24.5 320c-24.9 0-40.2-27.1-27.4-48.5L50 183.3C58.7 168.8 74.3 160 91.2 160l95 0c76.1-128.9 189.6-135.4 265.5-124.3 12.8 1.9 22.8 11.9 24.6 24.6 11.1 75.9 4.6 189.4-124.3 265.5l0 95c0 16.9-8.8 32.5-23.3 41.2l-88.2 52.9c-21.3 12.8-48.5-2.6-48.5-27.4L192 384c0-35.3-28.7-64-64-64l-.1 0zM400 160a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">SPACE</span>
+                        </span>
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="globe"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M351.9 280l-190.9 0c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zM160.9 232l190.9 0C349 167.5 334.7 108.1 314.4 64.6 303 40.2 290.7 22.8 279.3 12.2 268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4zm-48 0C116.4 146.4 138.5 66.9 170.8 14.7 78.7 47.3 10.9 131.2 1.5 232l111.4 0zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3L1.5 280zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3l-111.4 0zm111.4-48C501.9 131.2 434.1 47.3 342 14.7 374.3 66.9 396.4 146.4 399.9 232l111.4 0z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">EXPLORATION</span>
+                        </span>
+                      </div>
+                      <div class="ratio ratio-4x3">
+                        <img
+                          class="h-100 object-fit-cover"
+                          src="./images/latest-games-8.png"
+                          alt="Barren alien worlds"
+                        />
+                      </div>
+                      <h3
+                        class="position-absolute bottom-0 start-0 end-0 p-4 mb-0 fw-bold text-main-dark text-lg"
+                      >
+                        Barren alien worlds
+                      </h3>
+                    </div>
+                  </div>
+                  <!-- Card 9 -->
+                  <div class="col d-none d-lg-block px-md-3">
+                    <div
+                      class="card overflow-hidden rounded-4 position-relative"
+                    >
+                      <div
+                        class="badges position-absolute d-flex align-items-center gap-2"
+                      >
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="hat-wizard"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M64 400l85.7-208.2c17-41.3 47.8-75.3 87.2-96.3L383.8 17.2c12.3-6.6 26.5 4.7 23 18.2L369.6 177.8c-1.1 4.1-1.6 8.3-1.6 12.6 0 6.3 1.2 12.6 3.6 18.5l76.4 191.1-207.1 0 11.8-35.4 40.4-13.5c6.5-2.2 10.9-8.3 10.9-15.2s-4.4-13-10.9-15.2l-40.4-13.5-13.5-40.4C237 260.4 230.9 256 224 256s-13 4.4-15.2 10.9l-13.5 40.4-40.4 13.5C148.4 323 144 329.1 144 336s4.4 13 10.9 15.2l40.4 13.5 11.8 35.4-143.1 0zM279.6 141.5c-1.1-3.3-4.1-5.5-7.6-5.5s-6.5 2.2-7.6 5.5l-6.7 20.2-20.2 6.7c-3.3 1.1-5.5 4.1-5.5 7.6s2.2 6.5 5.5 7.6l20.2 6.7 6.7 20.2c1.1 3.3 4.1 5.5 7.6 5.5s6.5-2.2 7.6-5.5l6.7-20.2 20.2-6.7c3.3-1.1 5.5-4.1 5.5-7.6s-2.2-6.5-5.5-7.6l-20.2-6.7-6.7-20.2zM32 448l448 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 512c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">ACTION</span>
+                        </span>
+                        <span
+                          class="fw-bold py-1 rounded-pill d-flex align-items-center gap-2"
+                        >
+                          <svg
+                            class="text-main"
+                            width="1.25em"
+                            height="1em"
+                            data-prefix="fas"
+                            data-icon="dungeon"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M347.5 144.8c6.5 5.4 12.5 11.3 18 17.7 8.7 10.2 23.7 14 35.1 6.9l54.1-33.8c11.2-7 14.7-21.7 6.9-32.2-15.3-20.5-33.5-38.6-54.1-53.8-10.4-7.6-24.7-4.3-31.8 6.4l-35.1 52.6c-7.8 11.6-3.8 27.3 7 36.2zM327.8 41.1c8.6-12.9 2.9-30.5-12.2-34.1-19.1-4.6-39.1-7-59.6-7s-40.4 2.4-59.6 7c-15.1 3.6-20.8 21.2-12.2 34.1l40 60c5.2 7.8 14.5 11.7 23.9 11.2 5.2-.3 10.6-.3 15.8 0 9.4 .5 18.7-3.4 23.9-11.2l40-60zM50.5 103.3c-7.9 10.5-4.3 25.3 6.9 32.2l54.1 33.8c11.4 7.1 26.3 3.3 35.1-6.9 5.5-6.4 11.5-12.3 18-17.7 10.8-8.9 14.8-24.6 7-36.2L136.4 55.9c-7.1-10.7-21.5-14-31.8-6.4-20.6 15.1-38.8 33.3-54.1 53.8zm62 141.1c.8-9.9-3.3-19.9-11.8-25.1L41 182c-12.9-8-29.9-2.3-33.6 12.5-4.9 19.7-7.5 40.3-7.5 61.6l0 24c0 13.3 10.7 24 24 24l64 0c13.3 0 24-10.7 24-24l0-24c0-3.9 .2-7.8 .5-11.6zm287.1 0c.3 3.8 .5 7.7 .5 11.6l0 24c0 13.3 10.7 24 24 24l64 0c13.3 0 24-10.7 24-24l0-24c0-21.2-2.6-41.8-7.5-61.6-3.6-14.7-20.7-20.5-33.6-12.5l-59.7 37.3c-8.4 5.3-12.6 15.2-11.8 25.1zM88 352l-64 0c-13.3 0-24 10.7-24 24L0 488c0 13.3 10.7 24 24 24l64 0c13.3 0 24-10.7 24-24l0-112c0-13.3-10.7-24-24-24zm400 0l-64 0c-13.3 0-24 10.7-24 24l0 112c0 13.3 10.7 24 24 24l64 0c13.3 0 24-10.7 24-24l0-112c0-13.3-10.7-24-24-24zM280 184c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 304c0 13.3 10.7 24 24 24s24-10.7 24-24l0-304zm-80 32c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 272c0 13.3 10.7 24 24 24s24-10.7 24-24l0-272zm160 0c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 272c0 13.3 10.7 24 24 24s24-10.7 24-24l0-272z"
+                            ></path>
+                          </svg>
+                          <span class="text-gray text-xs">FUTURISTIC</span>
+                        </span>
+                      </div>
+                      <div class="ratio ratio-4x3">
+                        <img
+                          class="h-100 object-fit-cover"
+                          src="./images/latest-games-9.png"
+                          alt="Cloveland Quest"
+                        />
+                      </div>
+                      <h3
+                        class="position-absolute bottom-0 start-0 end-0 p-4 mb-0 fw-bold text-main-dark text-lg"
+                      >
+                        Shot Striker
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Controllers -->
+            <div
+              class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4 mt-md-5"
+            >
+              <div
+                class="d-flex align-items-center justify-content-center gap-3 gap-sm-4"
+              >
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carousel"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon d-flex"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      class="m-auto"
+                      width="1.25rem"
+                      height="1.25rem"
+                      data-prefix="fas"
+                      data-icon="arrow-left"
+                      role="img"
+                      viewBox="0 0 512 512"
+                      aria-hidden="true"
+                      data-fa-i2svg=""
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 105.4-105.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carousel"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon d-flex"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      class="m-auto"
+                      width="1.25rem"
+                      height="1.25rem"
+                      data-prefix="fas"
+                      data-icon="arrow-right"
+                      role="img"
+                      viewBox="0 0 512 512"
+                      aria-hidden="true"
+                      data-fa-i2svg=""
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <button class="view-all-btn btn font-chakra">
+                VIEW ALL GAMES
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What We Do Section -->
+      <section id="what-we-do" class="pb-5">
+        <div class="container-fluid">
+          <!-- Section Header -->
+          <header
+            class="section-header mb-5 d-flex flex-column align-items-center"
+          >
+            <span
+              class="text-sm d-block mb-3 fw-bold text-uppercase text-main font-chakra"
+              >What We Do</span
+            >
+            <h2 class="text-gray sm fw-bold">More Than Just Games</h2>
+            <p class="lg text-gray font-chakra fw-bold">
+              <span>We Build</span>
+              <span class="text-main">Interactive</span>
+              <span>Journeys</span>
+            </p>
+          </header>
+
+          <!-- Cards -->
+          <div class="row row-cols-2 row-cols-lg-4 gx-3 gx-md-4 gy-3 gy-md-4">
+            <!-- Card 1 -->
+            <div class="col">
+              <div
+                class="card hover align-items-center justify-content-center overflow-hidden position-relative gap-2"
+              >
+                <div class="icon-box d-flex rounded-3 mb-1">
+                  <svg
+                    class="m-auto"
+                    width="1.25rem"
+                    height="1.25rem"
+                    data-prefix="fas"
+                    data-icon="desktop"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    aria-hidden="true"
+                    data-fa-i2svg=""
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M64 32C28.7 32 0 60.7 0 96L0 352c0 35.3 28.7 64 64 64l144 0-16 48-72 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l272 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-72 0-16-48 144 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64L64 32zM96 96l320 0c17.7 0 32 14.3 32 32l0 160c0 17.7-14.3 32-32 32L96 320c-17.7 0-32-14.3-32-32l0-160c0-17.7 14.3-32 32-32z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="fw-bold text-gray text-lg text-center">
+                  <span class="d-block">PC Game</span>
+                  <span>Development</span>
+                </h3>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col">
+              <div
+                class="card hover align-items-center justify-content-center overflow-hidden position-relative gap-2"
+              >
+                <div class="icon-box d-flex rounded-3 mb-1">
+                  <svg
+                    class="m-auto"
+                    width="1.25rem"
+                    height="1.25rem"
+                    data-prefix="fas"
+                    data-icon="mobile-screen-button"
+                    role="img"
+                    viewBox="0 0 384 512"
+                    aria-hidden="true"
+                    data-fa-i2svg=""
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M16 64C16 28.7 44.7 0 80 0L304 0c35.3 0 64 28.7 64 64l0 384c0 35.3-28.7 64-64 64L80 512c-35.3 0-64-28.7-64-64L16 64zm64 0l0 304 224 0 0-304-224 0zM192 472c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="fw-bold text-gray text-lg text-center">
+                  <span class="d-block">Mobile Game</span>
+                  <span>Development</span>
+                </h3>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col">
+              <div
+                class="card align-items-center justify-content-center overflow-hidden position-relative gap-2"
+              >
+                <img
+                  class="w-100 h-100 object-fit-cover"
+                  src="./images/what-we-do-1.png"
+                  alt="two vibrant lime green gaming controllers floating against a matching lime green background, studio lighting, product shot"
+                />
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="col">
+              <div
+                class="card hover align-items-center justify-content-center overflow-hidden position-relative gap-2"
+              >
+                <div class="icon-box d-flex rounded-3 mb-1">
+                  <svg
+                    class="m-auto"
+                    width="1.25rem"
+                    height="1.25rem"
+                    data-prefix="fas"
+                    data-icon="vr-cardboard"
+                    role="img"
+                    viewBox="0 0 576 512"
+                    aria-hidden="true"
+                    data-fa-i2svg=""
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M512 96L64 96C28.7 96 0 124.7 0 160L0 352c0 35.3 28.7 64 64 64l117.5 0c17 0 33.3-6.7 45.3-18.7l33.9-33.9c7.2-7.2 17.1-11.3 27.3-11.3s20.1 4.1 27.3 11.3l33.9 33.9c12 12 28.3 18.7 45.3 18.7L512 416c35.3 0 64-28.7 64-64l0-192c0-35.3-28.7-64-64-64zM80 240a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm352-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="fw-bold text-gray text-lg text-center">
+                  <span class="d-block">AR/VR</span>
+                  <span>Solutions</span>
+                </h3>
+              </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="col">
+              <div
+                class="card hover align-items-center justify-content-center overflow-hidden position-relative gap-2"
+              >
+                <div class="icon-box d-flex rounded-3 mb-1">
+                  <svg
+                    class="m-auto"
+                    width="1.25rem"
+                    height="1.25rem"
+                    data-prefix="fas"
+                    data-icon="cubes"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    aria-hidden="true"
+                    data-fa-i2svg=""
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M284-1.3c-17.3-10-38.7-10-56 0L143.8 47.3c-17.3 10-28 28.5-28 48.5l0 101.9-88.3 51c-17.3 10-28 28.5-28 48.5l0 97.3c0 20 10.7 38.5 28 48.5l84.3 48.6c17.3 10 38.7 10 56 0l88.3-51 88.3 51c17.3 10 38.7 10 56 0L484.5 443c17.3-10 28-28.5 28-48.5l0-97.3c0-20-10.7-38.5-28-48.5l-88.3-51 0-101.9c0-20-10.7-38.5-28-48.5L284-1.3zM232 292.6l0 106.5-88.3 51c-1.2 .7-2.6 1.1-4 1.1l0-105.3 92.3-53.3zm231.4 .6c.7 1.2 1.1 2.6 1.1 4l0 97.3c0 2.9-1.5 5.5-4 6.9l-84.3 48.6c-1.2 .7-2.6 1.1-4 1.1l0-105.3 91.2-52.6zM348.3 95.8l0 101.9-92.3 53.3 0-106.5 91.2-52.6c.7 1.2 1.1 2.6 1.1 4z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="fw-bold text-gray text-lg text-center">
+                  <span class="d-block">AR/VR</span>
+                  <span>Design</span>
+                </h3>
+              </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="col">
+              <div
+                class="card align-items-center justify-content-center overflow-hidden position-relative gap-2"
+              >
+                <img
+                  class="w-100 h-100 object-fit-cover"
+                  src="./images/what-we-do-2.png"
+                  alt="3D stylized cartoon character, a male superhero in a green and white suit, smiling and holding a green tomato bomb, dynamic pose, vibrant green background"
+                />
+              </div>
+            </div>
+            <!-- Card 7 -->
+            <div class="col">
+              <div
+                class="card hover align-items-center justify-content-center overflow-hidden position-relative gap-2"
+              >
+                <div class="icon-box d-flex rounded-3 mb-1">
+                  <svg
+                    class="m-auto"
+                    width="1.25rem"
+                    height="1.25rem"
+                    data-prefix="fab"
+                    data-icon="playstation"
+                    role="img"
+                    viewBox="0 0 576 512"
+                    aria-hidden="true"
+                    data-fa-i2svg=""
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M571 372.3c-11.3 14.2-38.8 24.3-38.8 24.3l-205.1 73.6 0-54.3 150.9-53.8c17.1-6.1 19.8-14.8 5.8-19.4-13.9-4.6-39.1-3.3-56.2 2.9l-100.5 35.5 0-56.4c23.2-7.8 47.1-13.6 75.7-16.8 40.9-4.5 90.9 .6 130.2 15.5 44.2 14 49.2 34.7 38 48.9zM346.6 279.8l0-139c0-16.3-3-31.3-18.3-35.6-11.7-3.8-19 7.1-19 23.4l0 347.9-93.8-29.8 0-414.7c39.9 7.4 98 24.9 129.2 35.4 79.5 27.3 106.4 61.3 106.4 137.8 0 74.5-46 102.8-104.5 74.6zM43.3 410.2c-45.4-12.8-53-39.5-32.3-54.8 19.1-14.2 51.7-24.9 51.7-24.9l134.5-47.8 0 54.5-96.8 34.6c-17.1 6.1-19.7 14.8-5.8 19.4s39.1 3.3 56.2-2.9l46.4-16.9 0 48.8c-51.6 9.3-101.4 7.3-153.9-10z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="fw-bold text-gray text-lg text-center">
+                  <span class="d-block">PS4 Game</span>
+                  <span>Development</span>
+                </h3>
+              </div>
+            </div>
+            <!-- Card 8 -->
+            <div class="col">
+              <div
+                class="card hover align-items-center justify-content-center overflow-hidden position-relative gap-2"
+              >
+                <div class="icon-box d-flex rounded-3 mb-1">
+                  <svg
+                    class="m-auto"
+                    width="1.25rem"
+                    height="1.25rem"
+                    data-prefix="fas"
+                    data-icon="cube"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    aria-hidden="true"
+                    data-fa-i2svg=""
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M224.3-2.5c19.8-11.4 44.2-11.4 64 0L464.2 99c19.8 11.4 32 32.6 32 55.4l0 203c0 22.9-12.2 44-32 55.4L288.3 514.5c-19.8 11.4-44.2 11.4-64 0L48.5 413c-19.8-11.4-32-32.6-32-55.4l0-203c0-22.9 12.2-44 32-55.4L224.3-2.5zm207.8 360l0-166.1-143.8 83 0 166.1 143.8-83z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="fw-bold text-gray text-lg text-center">
+                  <span class="d-block">3D</span>
+                  <span>Modelings</span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sponsors -->
+      <div id="sponsors" class="position-relative overflow-hidden z-0">
+        <div class="container-fluid" style="max-width: 100%">
+          <div class="overflow-hidden">
+            <div class="scroll-row position-relative mb-3">
+              <div class="row-1 d-flex gap-3">
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-1.jpg"
+                    alt="nvidia gaming logo green and black"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-2.jpg"
+                    alt="intel gaming logo blue"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-3.jpg"
+                    alt="razer gaming logo green"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-4.jpg"
+                    alt="corsair gaming logo yellow"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-5.jpg"
+                    alt="logitech g gaming logo blue"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-6.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-7.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-8.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-9.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-10.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-1.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-3.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-1.jpg"
+                    alt="nvidia gaming logo green and black"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-2.jpg"
+                    alt="intel gaming logo blue"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-3.jpg"
+                    alt="razer gaming logo green"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-4.jpg"
+                    alt="corsair gaming logo yellow"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-5.jpg"
+                    alt="logitech g gaming logo blue"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-6.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-7.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-8.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-9.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-10.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-1.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-3.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="scroll-row position-relative">
+              <div class="row-2 d-flex gap-3">
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-1.jpg"
+                    alt="nvidia gaming logo green and black"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-2.jpg"
+                    alt="intel gaming logo blue"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-3.jpg"
+                    alt="razer gaming logo green"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-4.jpg"
+                    alt="corsair gaming logo yellow"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-5.jpg"
+                    alt="logitech g gaming logo blue"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-6.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-7.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-8.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-9.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-10.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-1.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-3.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-1.jpg"
+                    alt="nvidia gaming logo green and black"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-2.jpg"
+                    alt="intel gaming logo blue"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-3.jpg"
+                    alt="razer gaming logo green"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-4.jpg"
+                    alt="corsair gaming logo yellow"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-5.jpg"
+                    alt="logitech g gaming logo blue"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-6.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-7.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-8.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-9.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-10.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-1.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+                <div class="img-box flex-shrink-0 overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/logo-3.jpg"
+                    alt="steelseries gaming logo orange"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Our Team Section -->
+      <section id="team">
+        <div class="container-fluid">
+          <!-- Section Header -->
+          <header
+            class="section-header mb-5 d-flex flex-column gap-3 align-items-center text-center"
+          >
+            <span class="d-block fw-bold text-uppercase text-main font-chakra"
+              >Our Team</span
+            >
+            <h2 class="text-gray fw-bold lg">Our Best Team Members</h2>
+            <p class="text-xl text-gray-dark mb-3 font-chakra">
+              Meet the professional gamers and experts behind our success
+            </p>
+          </header>
+
+          <!-- Cards -->
+          <div
+            class="row row-cols-1 row-cols-md-2 row-cols-lg-4"
+            style="
+              --bs-gutter-x: 2rem;
+              --bs-gutter-y: 2rem;
+            "
+          >
+            <!-- Card 1 -->
+            <div class="col">
+              <div class="card position-relative overflow-hidden">
+                <div class="img-box h-100 position-relative">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/avatar-1.png"
+                    alt="Alex Chen"
+                  />
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-end position-absolute bottom-0 start-0 end-0 p-4"
+                >
+                  <div>
+                    <h3 class="fw-bold text-xl text-white mb-1">
+                      Alex "Phantom" Chen
+                    </h3>
+                    <span class="d-block font-chakra text-sm text-main"
+                      >Pro Player - VALORANT</span
+                    >
+                    <span class="text-xs font-chakra text-gray-dark"
+                      >World Champion 2023</span
+                    >
+                  </div>
+                  <span
+                    class="text-vertical text-lg fw-bold text-main font-chakra"
+                    >PHANTOM</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col">
+              <div class="card position-relative overflow-hidden">
+                <div class="img-box h-100 position-relative">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/avatar-2.png"
+                    alt="Ali Ahmed"
+                  />
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-end position-absolute bottom-0 start-0 end-0 p-4"
+                >
+                  <div>
+                    <h3 class="fw-bold text-xl text-white mb-1">
+                      Ali "Nova" Ahmed
+                    </h3>
+                    <span class="d-block font-chakra text-sm text-main"
+                      >Pro Player - League of Legends</span
+                    >
+                    <span class="text-xs font-chakra text-gray-dark"
+                      >MVP 2023 Season</span
+                    >
+                  </div>
+                  <span
+                    class="text-vertical text-lg fw-bold text-main font-chakra"
+                    >NOVA</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col">
+              <div class="card position-relative overflow-hidden">
+                <div class="img-box h-100 position-relative">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/avatar-3.png"
+                    alt="Marcus Rodriguez"
+                  />
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-end position-absolute bottom-0 start-0 end-0 p-4"
+                >
+                  <div>
+                    <h3 class="fw-bold text-xl text-white mb-1">
+                      Marcus "Viper" Rodriguez
+                    </h3>
+                    <span class="d-block font-chakra text-sm text-main"
+                      >Head Coach - CS:GO</span
+                    >
+                    <span class="text-xs font-chakra text-gray-dark"
+                      >5x Major Winner
+                    </span>
+                  </div>
+                  <span
+                    class="text-vertical text-lg fw-bold text-main font-chakra"
+                    >VIPER</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="col">
+              <div class="card position-relative overflow-hidden">
+                <div class="img-box h-100 position-relative">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/avatar-4.png"
+                    alt="Seif Usama"
+                  />
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-end position-absolute bottom-0 start-0 end-0 p-4"
+                >
+                  <div>
+                    <h3 class="fw-bold text-xl text-white mb-1">
+                      Seif "Saga" Usama
+                    </h3>
+                    <span class="d-block font-chakra text-sm text-main"
+                      >Strategic Analyst</span
+                    >
+                    <span class="text-xs font-chakra text-gray-dark"
+                      >Data Science Expert</span
+                    >
+                  </div>
+                  <span
+                    class="text-vertical text-lg fw-bold text-main font-chakra"
+                    >SAGA</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="col">
+              <div class="card position-relative overflow-hidden">
+                <div class="img-box h-100 position-relative">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/avatar-5.png"
+                    alt="Jake Wilson"
+                  />
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-end position-absolute bottom-0 start-0 end-0 p-4"
+                >
+                  <div>
+                    <h3 class="fw-bold text-xl text-white mb-1">
+                      Jake "Storm" Wilson
+                    </h3>
+                    <span class="d-block font-chakra text-sm text-main"
+                      >Pro Player - Apex Legends</span
+                    >
+                    <span class="text-xs font-chakra text-gray-dark"
+                      >Rising Star 2023</span
+                    >
+                  </div>
+                  <span
+                    class="text-vertical text-lg fw-bold text-main font-chakra"
+                    >STORM</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="col">
+              <div class="card position-relative overflow-hidden">
+                <div class="img-box h-100 position-relative">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/avatar-6.png"
+                    alt="David Park"
+                  />
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-end position-absolute bottom-0 start-0 end-0 p-4"
+                >
+                  <div>
+                    <h3 class="fw-bold text-xl text-white mb-1">
+                      David "Titan" Park
+                    </h3>
+                    <span class="d-block font-chakra text-sm text-main"
+                      >Team Captain - Dota 2</span
+                    >
+                    <span class="text-xs font-chakra text-gray-dark"
+                      >The International Winner</span
+                    >
+                  </div>
+                  <span
+                    class="text-vertical text-lg fw-bold text-main font-chakra"
+                    >TITAN</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card 7 -->
+            <div class="col">
+              <div class="card position-relative overflow-hidden">
+                <div class="img-box h-100 position-relative">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/avatar-7.png"
+                    alt="Khaled Ali"
+                  />
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-end position-absolute bottom-0 start-0 end-0 p-4"
+                >
+                  <div>
+                    <h3 class="fw-bold text-xl text-white mb-1">
+                      Khaled "Phoenix" Ali
+                    </h3>
+                    <span class="d-block font-chakra text-sm text-main"
+                      >Content Creator</span
+                    >
+                    <span class="text-xs font-chakra text-gray-dark"
+                      >2M+ Followers</span
+                    >
+                  </div>
+                  <span
+                    class="text-vertical text-lg fw-bold text-main font-chakra"
+                    >PHOENIX</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card 8 -->
+            <div class="col">
+              <div class="card position-relative overflow-hidden">
+                <div class="img-box h-100 position-relative">
+                  <img
+                    class="w-100 h-100 object-fit-cover"
+                    src="./images/avatar-8.png"
+                    alt="Ryan Miller"
+                  />
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-end position-absolute bottom-0 start-0 end-0 p-4"
+                >
+                  <div>
+                    <h3 class="fw-bold text-xl text-white mb-1">
+                      Ryan "Ghost" Miller
+                    </h3>
+                    <span class="d-block font-chakra text-sm text-main"
+                      >Team Manager</span
+                    >
+                    <span class="text-xs font-chakra text-gray-dark"
+                      >Operations Lead</span
+                    >
+                  </div>
+                  <span
+                    class="text-vertical text-lg fw-bold text-main font-chakra"
+                    >GHOST</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Us -->
+      <section id="contact">
+        <div class="container-fluid">
+          <!-- Section Header -->
+          <header
+            class="section-header mb-5 d-flex flex-column gap-3 align-items-center text-center"
+          >
+            <span class="d-block fw-bold text-uppercase text-main font-chakra"
+              >Contact Us</span
+            >
+            <h2 class="text-gray fw-bold lg">Get In Touch</h2>
+            <p class="text-xl text-gray-dark mb-3 font-chakra">
+              Have questions or need support? We're here to help!
+            </p>
+          </header>
+
+          <div class="form-content">
+            <div
+              class="row row-cols-1 row-cols-lg-2"
+              style="--bs-gutter-x: 3rem; --bs-gutter-y: 3rem"
+            >
+              <div class="col">
+                <div class="d-flex flex-column gap-4">
+                  <!-- Location -->
+                  <div class="card mb-2">
+                    <div class="card-body mb-4 d-flex align-items-center gap-4">
+                      <div class="icon rounded-circle bg-main d-flex">
+                        <svg
+                          class="m-auto text-main-dark"
+                          width="1.5rem"
+                          height="1.5rem"
+                          data-prefix="fas"
+                          data-icon="location-dot"
+                          role="img"
+                          viewBox="0 0 384 512"
+                          aria-hidden="true"
+                          data-fa-i2svg=""
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M0 188.6C0 84.4 86 0 192 0S384 84.4 384 188.6c0 119.3-120.2 262.3-170.4 316.8-11.8 12.8-31.5 12.8-43.3 0-50.2-54.5-170.4-197.5-170.4-316.8zM192 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 class="fw-bold text-xl text-gray mb-0">
+                          Our Location
+                        </h3>
+                        <span class="font-chakra text-gray-dark">
+                          123 Gaming Street, Esports City, EC 12345
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Phone Number -->
+                  <div class="card mb-2">
+                    <div class="card-body mb-4 d-flex align-items-center gap-4">
+                      <div class="icon rounded-circle bg-main d-flex">
+                        <svg
+                          class="m-auto text-main-dark"
+                          width="1.5rem"
+                          height="1.5rem"
+                          data-prefix="fas"
+                          data-icon="phone"
+                          role="img"
+                          viewBox="0 0 512 512"
+                          aria-hidden="true"
+                          data-fa-i2svg=""
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 class="fw-bold text-xl text-gray mb-0">
+                          Phone Number
+                        </h3>
+                        <span class="font-chakra text-gray-dark">
+                          +1 (555) 123-4567s
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Email Address -->
+                  <div class="card mb-2">
+                    <div class="card-body mb-4 d-flex align-items-center gap-4">
+                      <div class="icon rounded-circle bg-main d-flex">
+                        <svg
+                          class="m-auto text-main-dark"
+                          width="1.5rem"
+                          height="1.5rem"
+                          data-prefix="fas"
+                          data-icon="envelope"
+                          role="img"
+                          viewBox="0 0 512 512"
+                          aria-hidden="true"
+                          data-fa-i2svg=""
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M48 64c-26.5 0-48 21.5-48 48 0 15.1 7.1 29.3 19.2 38.4l208 156c17.1 12.8 40.5 12.8 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48L48 64zM0 196L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-188-198.4 148.8c-34.1 25.6-81.1 25.6-115.2 0L0 196z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 class="fw-bold text-xl text-gray mb-0">
+                          Email Address
+                        </h3>
+                        <span class="font-chakra text-gray-dark">
+                          contact@gamearena.com
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Social Links -->
+                  <div class="card links">
+                    <div class="card-body">
+                      <h3 class="fw-bold text-main-dark mb-3 text-2xl">
+                        Join Our Community
+                      </h3>
+                      <p class="font-chakra text-main-dark mb-4">
+                        Connect with us on social media for the latest updates
+                      </p>
+                      <div class="d-flex gap-3">
+                        <a class="rounded-circle d-flex" target="_blank" href="https://discord.com">
+                          <svg
+                            class="m-auto text-main"
+                            width="1.25rem"
+                            height="1.25rem"
+                            data-prefix="fab"
+                            data-icon="discord"
+                            role="img"
+                            viewBox="0 0 576 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1 .1s-.6 .4-.8 .8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2c-41.3 7.1-81.6 19.6-119.7 37.1-.3 .1-.6 .4-.8 .7-76.2 113.8-97.1 224.9-86.9 334.5 0 .3 .1 .5 .2 .8s.3 .4 .5 .6c44.4 32.9 94 58 146.8 74.2 .4 .1 .8 .1 1.1 0s.7-.4 .9-.7c11.3-15.4 21.4-31.8 30-48.8 .1-.2 .2-.5 .2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6 .2-.9 .3-.5 .6-.7c3.1-2.3 6.2-4.7 9.1-7.1 .3-.2 .6-.4 .9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1 .7-.2 1-.2s.7 .2 .9 .4c2.9 2.4 6 4.9 9.1 7.2 .2 .2 .4 .4 .6 .7s.2 .6 .2 .9-.1 .6-.3 .9-.4 .5-.6 .6c-14.7 8.6-30 15.9-45.9 21.8-.2 .1-.5 .2-.7 .4s-.3 .4-.4 .7-.1 .5-.1 .8 .1 .5 .2 .8c8.8 17 18.8 33.3 30 48.8 .2 .3 .6 .6 .9 .7s.8 .1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2 .2-.2 .4-.4 .5-.6s.2-.5 .2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2zm195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2z"
+                            ></path>
+                          </svg>
+                        </a>
+                        <a class="rounded-circle d-flex" target="_blank" href="https://x.com">
+                          <svg
+                            class="m-auto text-main"
+                            width="1.25rem"
+                            height="1.25rem"
+                            data-prefix="fab"
+                            data-icon="x-twitter"
+                            role="img"
+                            viewBox="0 0 448 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z"
+                            ></path>
+                          </svg>
+                        </a>
+                        <a class="rounded-circle d-flex" target="_blank" href="https://instagram.com">
+                          <svg
+                            class="m-auto text-main"
+                            width="1.25rem"
+                            height="1.25rem"
+                            data-prefix="fab"
+                            data-icon="instagram"
+                            role="img"
+                            viewBox="0 0 448 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                            ></path>
+                          </svg>
+                        </a>
+                        <a class="rounded-circle d-flex" target="_blank" href="https://youtube.com">
+                          <svg
+                            class="m-auto text-main"
+                            width="1.25rem"
+                            height="1.25rem"
+                            data-prefix="fab"
+                            data-icon="youtube"
+                            role="img"
+                            viewBox="0 0 576 512"
+                            aria-hidden="true"
+                            data-fa-i2svg=""
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M549.7 124.1C543.5 100.4 524.9 81.8 501.4 75.5 458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5C51.2 81.8 32.7 100.4 26.4 124.1 15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8 42.6 11.5 213.4 11.5 213.4 11.5s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6l0-162.4 142.7 81.2-142.7 81.2z"
+                            ></path>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <!-- Form Header -->
+                    <h3 class="text-2xl fw-bold text-gray mb-4">
+                      Send us a Message
+                    </h3>
+
+                    <!-- Form -->
+                    <form
+                      class="row font-chakra"
+                      style="--bs-gutter-x: 1.5rem; --bs-gutter-y: 1.5rem"
+                    >
+                      <!-- First Name -->
+                      <div class="col-12 col-md-6">
+                        <label
+                          for="first-name"
+                          class="form-label text-sm fw-bold mb-2"
+                          >First Name</label
+                        >
+                        <input
+                          class="form-control"
+                          autocomplete="on"
+                          id="first-name"
+                          placeholder="Your first name"
+                        />
+                      </div>
+                      <!-- Last Name -->
+                      <div class="col-12 col-md-6">
+                        <label
+                          for="last-name"
+                          class="form-label text-sm fw-bold mb-2"
+                          >Last Name</label
+                        >
+                        <input
+                          class="form-control"
+                          autocomplete="on"
+                          id="last-name"
+                          placeholder="Your last name"
+                        />
+                      </div>
+                      <!-- Email Address -->
+                      <div class="col-12">
+                        <label
+                          for="email"
+                          class="form-label text-sm fw-semibold mb-2"
+                          >Email Address</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          autocomplete="on"
+                          placeholder="your.email@example.com"
+                        />
+                      </div>
+                      <!-- Subject -->
+                      <div class="col-12">
+                        <label
+                          for="subject"
+                          class="form-label text-sm fw-semibold mb-2"
+                          >Subject</label
+                        >
+                        <select id="subject" class="form-select">
+                          <option>General Inquiry</option>
+                          <option>Tournament Support</option>
+                          <option>Technical Issue</option>
+                          <option>Partnership</option>
+                          <option>Media Request</option>
+                        </select>
+                      </div>
+                      <!-- Message -->
+                      <div class="col-12">
+                        <label
+                          for="message"
+                          class="form-label text-sm fw-semibold mb-2"
+                          >Message
+                        </label>
+                        <textarea
+                          id="message"
+                          class="form-control"
+                          style="resize: none"
+                          rows="5"
+                          placeholder="Tell us how we can help you..."
+                        ></textarea>
+                      </div>
+                      <!-- Subscription -->
+                      <div class="col d-flex align-items-center">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="check"
+                          style="
+                            --bs-border-color: #4a5565;
+                            --bs-border-width: 1px;
+                          "
+                        />
+                        <label class="form-check-label text-sm" for="check">
+                          Subscribe to our newsletter for gaming updates
+                        </label>
+                      </div>
+
+                      <!-- Submit -->
+                      <div class="col-12">
+                        <button
+                          type="submit"
+                          class="btn shine-btn filled text-lg w-100"
+                          style="--bs-btn-padding-y: 1rem"
+                        >
+                          <span
+                            class="d-flex align-items-center justify-content-center gap-2"
+                          >
+                            Send Message
+                            <svg
+                              class="ms-1"
+                              width="1.25rem"
+                              height="1.25rem"
+                              data-prefix="fas"
+                              data-icon="paper-plane"
+                              role="img"
+                              viewBox="0 0 576 512"
+                              aria-hidden="true"
+                              data-fa-i2svg=""
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9L229.2 276.1c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8l496.9-178z"
+                              ></path>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </form>
+
+                    <!-- Footer -->
+                    <footer
+                      class="border-top border-1"
+                      style="
+                        --bs-border-color: #364153;
+                        margin-top: 2rem;
+                        padding-top: 2rem;
+                      "
+                    >
+                      <div class="row row-cols-2 font-chakra">
+                        <div class="col">
+                          <div
+                            class="d-flex flex-column align-items-center gap-1"
+                          >
+                            <span class="text-2xl fw-bold text-main">24/7</span>
+                            <span class="text-sm text-gray-dark">
+                              Support Available
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div
+                            class="d-flex flex-column align-items-center gap-1"
+                          >
+                            <span class="text-2xl fw-bold text-main mb-1">
+                              &lt;1hr
+                            </span>
+                            <span class="text-sm text-gray-dark">
+                              Average Response
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-black">
+      <div class="container-fluid px-3 px-sm-4">
+        <div
+          class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 gx-0 gx-sm-4 mb-4 mb-md-5"
+          style="--bs-gutter-y: 2rem"
+        >
+          <!-- Social Links -->
+          <div class="col d-flex flex-column gap-4">
+            <div class="logo d-flex align-items-center">
+              <div class="box flex-shrink-0 text-main d-flex me-2">
+                <svg
+                  width="1.5rem"
+                  height="1.75rem"
+                  data-prefix="fas"
+                  data-icon="gamepad"
+                  role="img"
+                  viewBox="0 0 640 512"
+                  aria-hidden="true"
+                  data-fa-i2svg=""
+                >
+                  <path
+                    fill="currentColor"
+                    d="M448 64c106 0 192 86 192 192S554 448 448 448l-256 0C86 448 0 362 0 256S86 64 192 64l256 0zM192 176c-13.3 0-24 10.7-24 24l0 32-32 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l32 0 0 32c0 13.3 10.7 24 24 24s24-10.7 24-24l0-32 32 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-32 0 0-32c0-13.3-10.7-24-24-24zm240 96a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm64-96a32 32 0 1 0 0 64 32 32 0 1 0 0-64z"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="fw-bold text-main text-xl mb-0 ms-1 font-chakra">
+                GameArena
+              </h2>
+            </div>
+            <p class="font-chakra text-gray-dark mb-0">
+              The ultimate destination for competitive gaming, esports
+              tournaments, and gaming community.
+            </p>
+            <div class="d-flex gap-3">
+              <a href="https://x.com" target="_blank">
+                <svg
+                  class="m-auto"
+                  width="1.25rem"
+                  height="1.25rem"
+                  data-prefix="fab"
+                  data-icon="x-twitter"
+                  role="img"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true"
+                  data-fa-i2svg=""
+                >
+                  <path
+                    fill="currentColor"
+                    d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z"
+                  ></path>
+                </svg>
+              </a>
+              <a href="https://facebook.com" target="_blank">
+                <svg
+                  class="m-auto"
+                  width="1.25rem"
+                  height="1.25rem"
+                  data-prefix="fab"
+                  data-icon="facebook"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true"
+                  data-fa-i2svg=""
+                >
+                  <path
+                    fill="currentColor"
+                    d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5l0-170.3-52.8 0 0-78.2 52.8 0 0-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4l0 70.8c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2l0 27.8 83.6 0-14.4 78.2-69.3 0 0 175.9C413.8 494.8 512 386.9 512 256z"
+                  ></path>
+                </svg>
+              </a>
+              <a href="https://instagram.com" target="_blank">
+                <svg
+                  class="m-auto"
+                  width="1.25rem"
+                  height="1.25rem"
+                  data-prefix="fab"
+                  data-icon="instagram"
+                  role="img"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true"
+                  data-fa-i2svg=""
+                >
+                  <path
+                    fill="currentColor"
+                    d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                  ></path>
+                </svg>
+              </a>
+              <a href="https://youtube.com" target="_blank">
+                <svg
+                  class="m-auto"
+                  width="1.3rem"
+                  height="1.3rem"
+                  data-prefix="fab"
+                  data-icon="youtube"
+                  role="img"
+                  viewBox="0 0 576 512"
+                  aria-hidden="true"
+                  data-fa-i2svg=""
+                >
+                  <path
+                    fill="currentColor"
+                    d="M549.7 124.1C543.5 100.4 524.9 81.8 501.4 75.5 458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5C51.2 81.8 32.7 100.4 26.4 124.1 15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8 42.6 11.5 213.4 11.5 213.4 11.5s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6l0-162.4 142.7 81.2-142.7 81.2z"
+                  ></path>
+                </svg>
+              </a>
+              <a href="https://twitch.tv" target="_blank">
+                <svg
+                  class="m-auto"
+                  width="1.25rem"
+                  height="1.25rem"
+                  data-prefix="fab"
+                  data-icon="twitch"
+                  role="img"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true"
+                  data-fa-i2svg=""
+                >
+                  <path
+                    fill="currentColor"
+                    d="M359.4 103.5l-38.6 0 0 109.7 38.6 0 0-109.7zM253.2 103l-38.6 0 0 109.8 38.6 0 0-109.8zM89 0l-96.5 91.4 0 329.2 115.8 0 0 91.4 96.5-91.4 77.3 0 173.8-164.6 0-256-366.9 0zM417.3 237.8l-77.2 73.1-77.2 0-67.6 64 0-64-86.9 0 0-274.3 308.9 0 0 201.2z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- Games -->
+          <div class="col">
+            <h4 class="text-xl fw-bold mb-4 text-gray">Games</h4>
+            <ul class="mb-0 d-flex flex-column gap-2 list-unstyled font-chakra">
+              <li class="mb-1">
+                <a href="#games">VALORANT</a>
+              </li>
+              <li class="mb-1">
+                <a href="#games">League of Legends</a>
+              </li>
+              <li class="mb-1">
+                <a href="#games">CS:GO</a>
+              </li>
+              <li class="mb-1">
+                <a href="#games">Dota 2</a>
+              </li>
+              <li class="mb-1">
+                <a href="#games">Apex Legends</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Tournaments -->
+          <div class="col">
+            <h4 class="text-xl fw-bold mb-4 text-gray">Tournaments</h4>
+            <ul class="mb-0 d-flex flex-column gap-2 list-unstyled font-chakra">
+              <li class="mb-1">
+                <a href="#tournaments">Upcoming Events</a>
+              </li>
+              <li class="mb-1">
+                <a href="#tournaments">Live Matches</a>
+              </li>
+              <li class="mb-1">
+                <a href="#tournaments">Results</a>
+              </li>
+              <li class="mb-1">
+                <a href="#tournaments">Rankings</a>
+              </li>
+              <li class="mb-1">
+                <a href="#tournaments">Schedule</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Support -->
+          <div class="col">
+            <h4 class="text-xl fw-bold mb-4 text-gray">Support</h4>
+            <ul class="mb-0 d-flex flex-column gap-2 list-unstyled font-chakra">
+              <li class="mb-1">
+                <a href="#contact">Help Center</a>
+              </li>
+              <li class="mb-1">
+                <a href="#contact">Contact Us</a>
+              </li>
+              <li class="mb-1">
+                <a href="#contact">Bug Reports</a>
+              </li>
+              <li class="mb-1">
+                <a href="#contact">Feature Requests</a>
+              </li>
+              <li class="mb-1">
+                <a href="#contact">Community Guidelines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div
+          class="pt-4 border-top border-1 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 gap-md-0"
+          style="--bs-border-color: var(--primary-light-color)"
+        >
+          <span class="text-gray-dark">
+            &copy; 2025 GameArena. All rights reserved.
+          </span>
+          <ul class="mb-0 d-flex gap-3 list-unstyled font-chakra">
+            <li class="me-1">
+              <a href="#privacy">Privacy Policy</a>
+            </li>
+            <li class="me-1">
+              <a href="#terms">Terms of Service</a>
+            </li>
+            <li class="me-1">
+              <a href="#cookies">Cookie Policy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
